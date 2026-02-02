@@ -2,13 +2,24 @@ import { useState } from "react";
 import "./App.css";
 import { useRoutes } from "react-router-dom";
 
+import AddCreator from "./pages/AddCreator";
+import EditCreator from "./pages/EditCreator";
+import ShowCreators from "./pages/ShowCreators";
+import ViewCreator from "./pages/ViewCreator";
+
 function App() {
-  const [count, setCount] = useState(0);
+  const element = useRoutes([
+    { path: "/", element: <ShowCreators /> },
+    { path: "/new", element: <AddCreator /> },
+    { path: "/edit/:id", element: <EditCreator /> },
+    { path: "/view/:id", element: <ViewCreator /> },
+  ]);
 
   return (
     <>
-      <div>
+      <div className="app-container">
         <h1>CreatorVerse</h1>
+        {element}
       </div>
     </>
   );
