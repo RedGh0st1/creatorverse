@@ -4,7 +4,7 @@ Submitted by: **Lennie Nurse**
 
 About this web app: **A React app that lets users create, view, update, and delete their favorite content creators, stored in a Supabase database.**
 
-Time spent: **4** hours
+Time spent: **7** hours
 
 ## Required Features
 
