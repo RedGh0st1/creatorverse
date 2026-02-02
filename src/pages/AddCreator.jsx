@@ -16,7 +16,7 @@ export default function AddCreator() {
         name,
         url,
         description,
-        image_url: imageUrl,
+        imageUrl: imageUrl,
       },
     ]);
 
