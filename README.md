@@ -40,7 +40,7 @@ GIF created with ... 👉🏿 GIF tool here
 
 ## Notes
 
-As this was my first time working with a Backend-as-a-Service, setting up Supabase was a significant learning experience. I initially struggled with connecting the client and managing asynchronous data fetching. Ensuring that the React state synchronized correctly with the database after CRUD operations was a challenge, but it helped me better understand how the frontend and backend communicate.
+     While I have experience with databases, this was my first time using Supabase as a Backend-as-a-Service (BaaS). The main challenge was adapting to its specific client-side integration and managing asynchronous data fetching within the React lifecycle. Ensuring that the React state synchronized perfectly with Supabase after CRUD operations was a great learning experience in modern cloud-based architecture.
 
 ## License
 
