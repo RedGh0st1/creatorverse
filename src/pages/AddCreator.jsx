@@ -16,7 +16,7 @@ export default function AddCreator() {
         name,
         url,
         description,
-        imageUrl: imageUrl,
+        imageUrl: imageUrl || null,
       },
     ]);
 
@@ -26,6 +26,7 @@ export default function AddCreator() {
       navigate("/");
     }
   };
+
   return (
     <div>
       <h2>Add New Creator</h2>
