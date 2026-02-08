@@ -71,6 +71,6 @@ export default function EditCreator() {
         </div>
         <button type="submit">Update Creator</button>
       </form>
-    </div>;
-  )
+    </div>
+  );
 }

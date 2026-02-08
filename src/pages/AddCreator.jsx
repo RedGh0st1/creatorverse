@@ -7,20 +7,27 @@ export default function AddCreator() {
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [youtube, setYoutube] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [instagram, setInstagram] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const creatorData = {
+      name,
+      url,
+      description,
+      imageUrl: imageUrl || null,
+      youtube: youtube || null,
+      twitter: twitter || null,
+      instagram: instagram || null,
+    };
+
     const { data, error } = await supabase
       .from("creators")
-      .insert([
-        {
-          name,
-          url,
-          description,
-          imageUrl: imageUrl || null,
-        },
-      ])
+      .insert([creatorData])
       .select();
 
     if (error) {
@@ -33,7 +40,7 @@ export default function AddCreator() {
 
   return (
     <div className="add-creator">
-      <h2>Add New Creator</h2>
+      <h2 className="new_creator">Add New Creator</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
@@ -44,7 +51,7 @@ export default function AddCreator() {
             required
           />
         </div>
-        <div>
+        <div className="creator_url">
           <label>URL:</label>
           <input
             type="url"
@@ -53,7 +60,7 @@ export default function AddCreator() {
             required
           />
         </div>
-        <div>
+        <div className="creator_description">
           <label>Description:</label>
           <textarea
             value={description}
@@ -61,12 +68,36 @@ export default function AddCreator() {
             required
           ></textarea>
         </div>
-        <div>
+        <div className="creator_image">
           <label>Image URL:</label>
           <input
             type="url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+        <div className="creator_youttube">
+          <label>YouTube URL:</label>
+          <input
+            type="url"
+            value={youtube}
+            onChange={(e) => setYoutube(e.target.value)}
+          />
+        </div>
+        <div className="creator_twitter">
+          <label>Twitter URL:</label>
+          <input
+            type="url"
+            value={twitter}
+            onChange={(e) => setTwitter(e.target.value)}
+          />
+        </div>
+        <div className="creator_instagram">
+          <label>Instagram URL:</label>
+          <input
+            type="url"
+            value={instagram}
+            onChange={(e) => setInstagram(e.target.value)}
           />
         </div>
         <button type="submit">Add Creator</button>
