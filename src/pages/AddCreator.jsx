@@ -32,7 +32,7 @@ export default function AddCreator() {
   };
 
   return (
-    <div>
+    <div className="add-creator">
       <h2>Add New Creator</h2>
       <form onSubmit={handleSubmit}>
         <div>
