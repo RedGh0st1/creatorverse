@@ -31,5 +31,46 @@ export default function EditCreator() {
     fetchCreator();
   }, [id]);
 
-  return <div className="edit-creator">EditCreator</div>;
+  return (
+    <div className="edit-creator">
+      <h2>Edit Creator</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>URL:</label>
+          <input
+            type="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Description:</label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label>Image URL:</label>
+          <input
+            type="url"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+        <button type="submit">Update Creator</button>
+      </form>
+    </div>;
+  )
 }
