@@ -19,6 +19,7 @@ function App() {
       <div className="app-container">
         <h1 className="app-title">CreatorVerse</h1>
         {element}
+        <AddCreator />
       </div>
     </>
   );

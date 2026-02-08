@@ -30,4 +30,6 @@ export default function EditCreator() {
     };
     fetchCreator();
   }, [id]);
+
+  return <div className="edit-creator">EditCreator</div>;
 }
