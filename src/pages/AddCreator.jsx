@@ -11,18 +11,22 @@ export default function AddCreator() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from("creators").insert([
-      {
-        name,
-        url,
-        description,
-        imageUrl: imageUrl || null,
-      },
-    ]);
+    const { data, error } = await supabase
+      .from("creators")
+      .insert([
+        {
+          name,
+          url,
+          description,
+          imageUrl: imageUrl || null,
+        },
+      ])
+      .select();
 
     if (error) {
       console.error("Error adding creator:", error);
     } else {
+      console.log("Creator added successfully:", data);
       navigate("/");
     }
   };
