@@ -7,6 +7,9 @@ export default function EditCreator() {
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [youtube, setYoutube] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [instagram, setInstagram] = useState("");
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,6 +29,9 @@ export default function EditCreator() {
         setUrl(data.url);
         setDescription(data.description);
         setImageUrl(data.imageUrl || "");
+        setYoutube(data.youtube || "");
+        setTwitter(data.twitter || "");
+        setInstagram(data.instagram || "");
       }
     };
     fetchCreator();
@@ -35,8 +41,8 @@ export default function EditCreator() {
     <div className="edit-creator">
       <h2>Edit Creator</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
+        <div className="edit_creator_name">
+          <label>Name</label>
           <input
             type="text"
             value={name}
@@ -44,8 +50,8 @@ export default function EditCreator() {
             required
           />
         </div>
-        <div>
-          <label>URL:</label>
+        <div className="edit_creator_url">
+          <label>URL</label>
           <input
             type="url"
             value={url}
@@ -53,7 +59,7 @@ export default function EditCreator() {
             required
           />
         </div>
-        <div>
+        <div className="edit_creator_description">
           <label>Description:</label>
           <textarea
             value={description}
@@ -61,15 +67,22 @@ export default function EditCreator() {
             required
           ></textarea>
         </div>
-        <div>
-          <label>Image URL:</label>
+        <div className="edit_creator_image">
+          <label>Image</label>
           <input
             type="url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </div>
-        <button type="submit">Update Creator</button>
+        <div className="edit_creator_socials">
+          <h3>Social Media Links </h3>
+          <p>Provide at least one of the creator's social media handles</p>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="delete" onClick={handleDelete}>
+          Delete
+        </button>
       </form>
     </div>
   );

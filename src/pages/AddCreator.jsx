@@ -40,10 +40,9 @@ export default function AddCreator() {
 
   return (
     <div className="add-creator">
-      <h2 className="new_creator">Add New Creator</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
+        <div className="add_creator_name">
+          <label>Name</label>
           <input
             type="text"
             value={name}
@@ -51,8 +50,8 @@ export default function AddCreator() {
             required
           />
         </div>
-        <div className="creator_url">
-          <label>URL:</label>
+        <div className="add_creator_url">
+          <label>URL</label>
           <input
             type="url"
             value={url}
@@ -60,47 +59,51 @@ export default function AddCreator() {
             required
           />
         </div>
-        <div className="creator_description">
-          <label>Description:</label>
+        <div className="add_creator_description">
+          <label>Description</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
           ></textarea>
         </div>
-        <div className="creator_image">
-          <label>Image URL:</label>
+        <div className="add_creator_image">
+          <label>Image</label>
           <input
             type="url"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
         </div>
-        <div className="creator_youttube">
-          <label>YouTube URL:</label>
+        <div className="Social_media_links">
+          <h3>Social Media Links </h3>
+          <p>Provide at least one of the creator's social media handles</p>
+        </div>
+        <div className="add_creator_youtube">
+          <label>YouTube</label>
           <input
             type="url"
             value={youtube}
             onChange={(e) => setYoutube(e.target.value)}
           />
         </div>
-        <div className="creator_twitter">
-          <label>Twitter URL:</label>
+        <div className="add_creator_twitter">
+          <label>Twitter</label>
           <input
             type="url"
             value={twitter}
             onChange={(e) => setTwitter(e.target.value)}
           />
         </div>
-        <div className="creator_instagram">
-          <label>Instagram URL:</label>
+        <div className="add_creator_instagram">
+          <label>Instagram</label>
           <input
             type="url"
             value={instagram}
             onChange={(e) => setInstagram(e.target.value)}
           />
         </div>
-        <button type="submit">Add Creator</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
